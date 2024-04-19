@@ -22,20 +22,20 @@
     </div>
 @endif
 
-    <form action="{{route('tasks.update',$task)}}" method="POST">
+<form action="{{ route('tasks.update', $task) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
                 <div class="form-group">
-                    <strong>Tarea:</strong>
-                    <input type="text" name="title" class="form-control" placeholder="Tarea" value="{{old('title')}}">
+                    <label for="title">Tarea:</label>
+                    <input type="text" name="title" class="form-control" id="title" value="{{ $task->title }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
                 <div class="form-group">
-                    <strong>Descripción:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Descripción..." >{{old('description')}}</textarea>
+                    <label for="description">Descripción:</label>
+                    <textarea class="form-control" name="description" id="description">{{ $task->description }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 mt-2">

@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('tasks', TaskController::class);
+Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
+Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+
