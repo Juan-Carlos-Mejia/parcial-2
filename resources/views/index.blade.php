@@ -27,7 +27,7 @@
                 <th>Acción</th>
             </tr>
 
-            @foreach ($tasks as $tasks)
+            @foreach ($tasks as $task)
             <tr>
                 <td class="fw-bold">
                 </td>
